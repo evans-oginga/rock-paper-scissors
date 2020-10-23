@@ -1,0 +1,58 @@
+<script type="text/javascript">
+	
+
+
+
+let playerSelection = prompt("Please choose between rock, paper, scissors");
+let computerSelection = Math.random();
+if (computerSelection < 0.34) {
+	computerSelection = "rock";
+} else if(computerSelection <= 0.67) {
+	computerSelection = "paper";
+} else {
+	computerSelection = "scissors";
+}
+
+function computerplay(){	
+	return choice;
+}
+
+function playRound(playerSelection, computerSelection){
+	if (playerSelection===computerSelection) {
+		return "The result is a tie!";
+	}else if(playerSelection==="rock"){
+		if (computerSelection==="scissors") {
+			return "You win! Rock beats scissors";
+		}else if(computerSelection==="paper"){
+			return "You lose! Paper beats Rock!"
+		}
+	}
+	else if(playerSelection==="paper"){
+        if(computerSelection==="scissors"){
+            return "You lose!scissors beats paper!"
+        }
+        else if(computerSelection==="rock"){
+            return "You win! Paper beats Rock!";
+        }
+    }
+    else if(playerSelection==="scissors"){
+        if(computerSelection==="paper"){
+            return "You win Scissors beats Paper!"
+        }
+        else if(computerSelection==="rock"){
+            return "You lose! Rock beats scissors!";
+        }
+    }
+
+}
+
+function game(){
+	let i = 0;
+	if(i<5){
+		i++;
+		console.log(playRound());
+	}
+}
+
+game();
+</script>
